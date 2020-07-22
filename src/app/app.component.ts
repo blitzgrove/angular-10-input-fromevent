@@ -19,7 +19,7 @@ export class AppComponent  {
       this.discountInputs.map(discountInput => 
         fromEvent(discountInput.nativeElement, 'keyup').pipe(
           distinctUntilChanged((prev: KeyboardEvent, curr: KeyboardEvent) => {  // doesn't work yet
-            return prev.target.value === curr.target.value;
+            return prev.target.value !== curr.target.value;
           }),
           startWith(null)
         )
